@@ -2,12 +2,12 @@
   "info": {
     "name": "Student API (Local)",
     "_postman_id": "a1111111-b222-4333-c444-555555555555",
-    "description": "Postman collection for the pure Node.js Student API (no Express).",
+    "description": "Postman collection for Student API.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
-    { "key": "baseUrl", "value": "http://localhost:4000" },
-    { "key": "studentId", "value": "1" }
+    { "key": "baseUrl", "value": "http://localhost:5000" },
+    { "key": "student_id", "value": "1" }
   ],
   "item": [
     {
@@ -19,7 +19,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"John Doe\",\n  \"age\": 21,\n  \"course\": \"BSIT\",\n  \"year_level\": 3,\n  \"status\": \"Active\"\n}"
+          "raw": "{\n  \"name\": \"Joyce\",\n  \"age\": 21,\n  \"course\": \"BSIT\",\n  \"year_level\": 4,\n  \"status\": \"Enrolled\"\n}"
         },
         "url": {
           "raw": "{{baseUrl}}/students",
@@ -44,9 +44,9 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "{{baseUrl}}/students/{{studentId}}",
+          "raw": "{{baseUrl}}/students/{{student_id}}",
           "host": ["{{baseUrl}}"],
-          "path": ["students", "{{studentId}}"]
+          "path": ["students", "{{student_id}}"]
         }
       }
     },
@@ -59,12 +59,12 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Jane Doe\",\n  \"age\": 22,\n  \"course\": \"BSCS\",\n  \"year_level\": 4,\n  \"status\": \"Graduated\"\n}"
+          "raw": "{\n  \"name\": \"Kim\",\n  \"age\": 23,\n  \"course\": \"BSCS\",\n  \"year_level\": 4,\n  \"status\": \"Enrolled\"\n}"
         },
         "url": {
-          "raw": "{{baseUrl}}/students/{{studentId}}",
+          "raw": "{{baseUrl}}/students/{{student_id}}",
           "host": ["{{baseUrl}}"],
-          "path": ["students", "{{studentId}}"]
+          "path": ["students", "{{student_id}}"]
         }
       }
     },
@@ -77,12 +77,12 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"status\": \"Inactive\"\n}"
+          "raw": "{\n  \"status\": \"Enrolled\"\n}"
         },
         "url": {
-          "raw": "{{baseUrl}}/students/{{studentId}}",
+          "raw": "{{baseUrl}}/students/{{student_id}}",
           "host": ["{{baseUrl}}"],
-          "path": ["students", "{{studentId}}"]
+          "path": ["students", "{{student_id}}"]
         }
       }
     },
@@ -91,9 +91,9 @@
       "request": {
         "method": "DELETE",
         "url": {
-          "raw": "{{baseUrl}}/students/{{studentId}}",
+          "raw": "{{baseUrl}}/students/{{student_id}}",
           "host": ["{{baseUrl}}"],
-          "path": ["students", "{{studentId}}"]
+          "path": ["students", "{{student_id}}"]
         }
       }
     }
