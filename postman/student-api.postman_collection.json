@@ -1,0 +1,101 @@
+{
+  "info": {
+    "name": "Student API (Local)",
+    "_postman_id": "a1111111-b222-4333-c444-555555555555",
+    "description": "Postman collection for the pure Node.js Student API (no Express).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:4000" },
+    { "key": "studentId", "value": "1" }
+  ],
+  "item": [
+    {
+      "name": "Create Student (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"age\": 21,\n  \"course\": \"BSIT\",\n  \"year_level\": 3,\n  \"status\": \"Active\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/students",
+          "host": ["{{baseUrl}}"],
+          "path": ["students"]
+        }
+      }
+    },
+    {
+      "name": "Get All Students (GET)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/students",
+          "host": ["{{baseUrl}}"],
+          "path": ["students"]
+        }
+      }
+    },
+    {
+      "name": "Get One Student (GET)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/students/{{studentId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["students", "{{studentId}}"]
+        }
+      }
+    },
+    {
+      "name": "Update Student (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Jane Doe\",\n  \"age\": 22,\n  \"course\": \"BSCS\",\n  \"year_level\": 4,\n  \"status\": \"Graduated\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/students/{{studentId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["students", "{{studentId}}"]
+        }
+      }
+    },
+    {
+      "name": "Partial Update (PATCH)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Inactive\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/students/{{studentId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["students", "{{studentId}}"]
+        }
+      }
+    },
+    {
+      "name": "Delete Student (DELETE)",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseUrl}}/students/{{studentId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["students", "{{studentId}}"]
+        }
+      }
+    }
+  ]
+}
